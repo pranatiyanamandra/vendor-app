@@ -22,7 +22,7 @@ const Feed = () => {
             method: 'DELETE',
           })
 
-        const filteredPosts = posts.filter((p) => p._id !== post.id);
+        const filteredPosts = posts.filter((p) => p._id !== post._id);
         setPosts(filteredPosts)
       } catch (error) {
         console.log(error)
@@ -37,8 +37,10 @@ const Feed = () => {
   }
 
   useEffect(() => {
-    if (session?.user.id) fetchPosts();
-  }, []);
+    if (session?.user.id){ 
+      console.log("called")
+      fetchPosts()};
+  }, [session?.user.id]);
 
 
   return (

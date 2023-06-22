@@ -10,7 +10,6 @@ const VendorCardList = ({ data, handleEdit, handleDelete }) => {
     const lastPageIndex = firstPageIndex + PageSize;
     const currentTableData = data.slice(firstPageIndex, lastPageIndex);
   
-  
     return <>
       <div className="mt-16 space-y-6 py-8 sm:columns-2 sm:gap-6 xl:columns-3">
         {
